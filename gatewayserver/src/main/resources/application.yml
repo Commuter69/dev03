@@ -24,10 +24,6 @@ spring:
               uri: lb://GAME
               predicates:
                 - Path=/api/games/**
-  eureka:
-    client:
-      service-url:
-        defaultZone: 'http://localhost:8761/eureka/'
 management:
   endpoints:
     web:
@@ -36,6 +32,12 @@ management:
   endpoint:
     gateway:
       access: unrestricted
+
 eureka:
-  instance:
-    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+  serviceUrl:
+    defaultZone: ${DISCOVERY_SERVICE_URL:http://localhost:8761/eureka}
+    instance:
+      prefer-ip-address: t

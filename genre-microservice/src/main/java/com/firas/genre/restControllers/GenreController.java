@@ -15,11 +15,11 @@ public class GenreController {
 
     private final GenreService genreService;
 
-    @Value("${build.version}")
-    private String buildVersion;
-
-    @Autowired
-    private Configuration configuration; // VOTRE classe personnalisée
+//    @Value("${build.version}")
+//    private String buildVersion;
+//
+//    @Autowired
+//    private Configuration configuration; // VOTRE classe personnalisée
 
     public GenreController(GenreService genreService) {
         this.genreService = genreService;
@@ -31,13 +31,13 @@ public class GenreController {
         return ResponseEntity.ok(genreDto);
     }
 
-    @GetMapping("/version")
-    public ResponseEntity<String> getVersion() {
-        return ResponseEntity.ok(buildVersion);
-    }
-
-    @GetMapping("/author")
-    public ResponseEntity<String> getAuthorInfo() {
-        return ResponseEntity.ok(configuration.getName() + " " + configuration.getEmail());
-    }
+//    @GetMapping("/version")
+//    public ResponseEntity<String> getVersion() {
+//        return ResponseEntity.ok(buildVersion);
+//    }
+//
+//    @GetMapping("/author")
+//    public ResponseEntity<String> getAuthorInfo() {
+//        return ResponseEntity.ok(configuration.getName() + " " + configuration.getEmail());
+//    }
 }
